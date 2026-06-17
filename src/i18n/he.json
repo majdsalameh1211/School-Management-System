@@ -67,5 +67,12 @@
   "support": "תמיכה",
   "privacy": "פרטיות",
   "activeYear": "שנה פעילה",
-  "school": "בית ספר"
+  "school": "בית ספר",
+  "systemName": "מערכת ניהול בית ספר",
+  "systemNameShort": "מנב״ס",
+  "roleAdmin": "מנהל",
+  "roleEditor": "עורך",
+  "roleWrite": "כותב",
+  "roleReadOnly": "צפייה בלבד",
+  "roleSchoolManager": "מנהל בית ספר"
 }

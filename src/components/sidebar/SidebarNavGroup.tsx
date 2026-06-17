@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ChevronDown, LucideIcon } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
 import { SidebarSubItem } from "./SidebarSubItem";
+import { useDirection } from "@/hooks/useDirection";
 
 interface SubItem {
   label: string;
@@ -28,6 +29,8 @@ export function SidebarNavGroup({
   const pathname = usePathname();
   const isGroupActive = pathname.startsWith(basePath);
   const [open, setOpen] = useState(isGroupActive);
+  const direction = useDirection();
+  const isRTL = direction === "rtl";
 
   return (
     <div className="flex flex-col gap-0.5">
@@ -49,13 +52,14 @@ export function SidebarNavGroup({
         />
         {!collapsed && (
           <>
-            <span className="flex-1 text-left truncate">{label}</span>
-            <ChevronDown
-              size={14}
-              className={`text-gray-400 transition-transform ${
-                open ? "rotate-180" : ""
-              }`}
-            />
+            <span className="flex-1 text-start truncate">{label}</span>
+            {open ? (
+              <ChevronDown size={14} className="text-gray-400 shrink-0" />
+            ) : isRTL ? (
+              <ChevronLeft size={14} className="text-gray-400 shrink-0" />
+            ) : (
+              <ChevronRight size={14} className="text-gray-400 shrink-0" />
+            )}
           </>
         )}
       </button>

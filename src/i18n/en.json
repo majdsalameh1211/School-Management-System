@@ -67,5 +67,12 @@
   "support": "Support",
   "privacy": "Privacy",
   "activeYear": "Active Year",
-  "school": "School"
+  "school": "School",
+  "systemName": "School Management System",
+  "systemNameShort": "SMS",
+  "roleAdmin": "Admin",
+  "roleEditor": "Editor",
+  "roleWrite": "Write",
+  "roleReadOnly": "Read Only",
+  "roleSchoolManager": "School Manager"
 }

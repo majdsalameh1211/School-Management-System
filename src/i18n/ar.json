@@ -67,5 +67,12 @@
   "support": "الدعم",
   "privacy": "الخصوصية",
   "activeYear": "السنة النشطة",
-  "school": "المدرسة" 
+  "school": "المدرسة",
+  "systemName": "نظام إدارة المدرسة",
+  "systemNameShort": "ن.إ.م",
+  "roleAdmin": "مدير",
+  "roleEditor": "محرر",
+  "roleWrite": "كاتب",
+  "roleReadOnly": "قراءة فقط",
+  "roleSchoolManager": "مدير المدرسة"
 }
