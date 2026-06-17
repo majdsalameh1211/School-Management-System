@@ -18,10 +18,9 @@ import {
   MessageSquare,
   Settings,
   Search,
-  User,
-  KeyRound,
   LogOut,
 } from "lucide-react";
+
 import { SidebarNavItem } from "@/components/sidebar/SidebarNavItem";
 import { SidebarNavGroup } from "@/components/sidebar/SidebarNavGroup";
 import { useSchoolContext } from "@/context/SchoolContext";
@@ -91,13 +90,11 @@ export function MobileDrawerNavigation({
         <SidebarNavItem label={t.schoolProfile} href="/school-profile" icon={Settings} collapsed={false} />
       </nav>
 
-      <div className="border-t border-gray-100 p-2 flex flex-col gap-0.5">
-        <SidebarNavItem label={t.myProfile} href="/profile" icon={User} collapsed={false} />
-        <SidebarNavItem label={t.changePassword} href="/change-password" icon={KeyRound} collapsed={false} />
+      <div className="border-t border-gray-100 p-2">
         <button
           type="button"
           onClick={() => (window.location.href = "/login")}
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-600 hover:bg-red-50 transition-colors"
+          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-600 hover:bg-red-50 transition-colors w-full"
         >
           <LogOut size={18} className="text-red-400 shrink-0" />
           <span>{t.logout}</span>

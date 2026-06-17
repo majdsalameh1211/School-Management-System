@@ -11,12 +11,14 @@ interface SchoolContextValue {
   selectedYear: AcademicYear | null;
   language: Language;
   sidebarOpen: boolean;
+  drawerOpen: boolean;
   setUser: (user: CurrentUser | null) => void;
   setSchool: (school: School | null) => void;
   setAcademicYears: (years: AcademicYear[]) => void;
   setSelectedYear: (year: AcademicYear) => void;
   setLanguage: (language: Language) => void;
   toggleSidebar: () => void;
+  toggleDrawer: () => void;
 }
 
 const SchoolContext = createContext<SchoolContextValue | null>(null);
@@ -51,9 +53,14 @@ export function SchoolProvider({ children }: { children: ReactNode }) {
 
   const [language, setLanguage] = useState<Language>("en");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   function toggleSidebar() {
     setSidebarOpen((prev) => !prev);
+  }
+
+  function toggleDrawer() {
+    setDrawerOpen((prev) => !prev);
   }
 
   return (
@@ -65,12 +72,14 @@ export function SchoolProvider({ children }: { children: ReactNode }) {
         selectedYear,
         language,
         sidebarOpen,
+        drawerOpen,
         setUser,
         setSchool,
         setAcademicYears,
         setSelectedYear,
         setLanguage,
         toggleSidebar,
+        toggleDrawer,
       }}
     >
       {children}

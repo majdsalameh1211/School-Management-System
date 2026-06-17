@@ -34,10 +34,10 @@ export function DesktopSidebar() {
   return (
     <aside
       dir={direction}
-      className={`hidden md:flex flex-col shrink-0 h-full bg-white border-r border-gray-200 transition-all duration-200 ${collapsed ? "w-14" : "w-56"
+      className={`hidden md:flex flex-col shrink-0 h-full bg-white border-r border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${collapsed ? "w-14" : "w-56"
         }`}
     >
-      <nav className="flex flex-col gap-0.5 p-2 flex-1 overflow-y-auto">
+      <nav className="flex flex-col gap-0.5 p-2 flex-1 overflow-y-auto scrollbar-none">
         <SidebarNavItem
           label={t.dashboard}
           href="/dashboard"

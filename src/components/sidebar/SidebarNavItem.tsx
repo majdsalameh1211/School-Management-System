@@ -33,7 +33,13 @@ export function SidebarNavItem({
         size={18}
         className={`shrink-0 ${isActive ? "text-blue-600" : "text-gray-400"}`}
       />
-      {!collapsed && <span className="truncate">{label}</span>}
+      <span
+        className={`truncate transition-all duration-300 ease-in-out ${
+          collapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+        }`}
+      >
+        {label}
+      </span>
     </Link>
   );
 }

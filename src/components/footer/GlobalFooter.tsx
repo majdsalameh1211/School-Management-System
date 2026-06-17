@@ -1,3 +1,5 @@
+"use client";
+
 import { CopyrightText } from "./CopyrightText";
 import { FooterSchoolInfo } from "./FooterSchoolInfo";
 import { FooterAcademicYear } from "./FooterAcademicYear";
@@ -11,35 +13,37 @@ export function GlobalFooter() {
 
   return (
     <footer
-      className="w-full bg-white border-t border-gray-200 px-6 py-3 shrink-0"
+      className="w-full bg-white border-t border-gray-100 shrink-0"
       dir={direction}
     >
       {/* Desktop */}
-      <div className="hidden md:flex items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="hidden md:flex items-center justify-between px-6 py-2.5">
+        <div className="flex items-center gap-3">
           <CopyrightText />
-          <span className="text-gray-200">|</span>
+          <span className="text-gray-200 text-xs">|</span>
           <FooterSchoolInfo />
-          <span className="text-gray-200">|</span>
+          <span className="text-gray-200 text-xs">|</span>
           <FooterVersion />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <FooterAcademicYear />
-          <span className="text-gray-200">|</span>
+          <span className="text-gray-200 text-xs">|</span>
           <FooterLastLogin />
-          <span className="text-gray-200">|</span>
+          <span className="text-gray-200 text-xs">|</span>
           <FooterLinks />
         </div>
       </div>
 
       {/* Mobile */}
-      <div className="flex flex-col gap-2 md:hidden">
-        <CopyrightText />
-        <FooterSchoolInfo />
-        <FooterAcademicYear />
-        <FooterVersion />
-        <FooterLastLogin />
-        <FooterLinks />
+      <div className="flex md:hidden flex-wrap items-center justify-between px-4 py-2 gap-x-4 gap-y-1">
+        <div className="flex items-center gap-2 flex-wrap">
+          <CopyrightText />
+          <span className="text-gray-200 text-xs">·</span>
+          <FooterVersion />
+        </div>
+        <div className="flex items-center gap-2">
+          <FooterLinks />
+        </div>
       </div>
     </footer>
   );
